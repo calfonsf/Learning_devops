@@ -1,0 +1,10 @@
+---
+- name: playbook general
+  hosts: server
+  become: yes
+  tasks:
+  - name: add user to group
+    ansible.builtin.user:
+      name: luffy
+      state: present
+      group: sudo

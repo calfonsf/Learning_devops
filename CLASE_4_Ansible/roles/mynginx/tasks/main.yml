@@ -1,0 +1,22 @@
+- name: Actualizar lista de paquetes
+  apt:
+    update_cache: yes
+
+- name: Instalar Nginx
+  apt:
+    name: nginx
+    state: present
+    
+- name: Copiar archivo de configuración de Nginx
+  template:
+    src: nginx.conf.j2
+    dest: /etc/nginx/{{ nginx_conf_file }}
+    mode: 0644
+  notify: reiniciar Nginx
+
+- name: Copiar archivo de configuración de Nginx
+  template:
+    src: mywebpage.html.j2
+    dest: /var/www/html/{{pagefile}}
+    mode: 0644
+  notify: reiniciar Nginx

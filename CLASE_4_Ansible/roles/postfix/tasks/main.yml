@@ -1,0 +1,29 @@
+- name: Actualizar lista de paquetes
+  apt: 
+    update_cache: yes
+
+- name: Instalar Postfix y snail
+  apt: 
+    name: 
+      - postfix
+      - s-nail
+    state: present
+
+- name: Copiar Fichero de Configuracion
+  template:
+    src: main.cf.j2
+    dest: /etc/postfix/{{ postfix_conf_file }}
+    mode: 0644
+  notify: reiniciar postfix
+
+- name: Copiar Fichero de Configuracion
+  template:
+    src: virtual.j2
+    dest: /etc/postfix/virtual
+    mode: 0644
+  notify: reiniciar postfix
+
+- name: postconf
+  ansible.builtin.command: sudo postmap /etc/postfix/virtual
+  
+

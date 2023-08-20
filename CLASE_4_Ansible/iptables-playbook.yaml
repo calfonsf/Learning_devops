@@ -1,0 +1,23 @@
+---
+- name: playbook general
+  hosts: server
+  become: yes
+  tasks:
+  - name: permitir conecciones a varios puertos
+    ansible.builtin.iptables:
+      chain: INPUT
+      protocol: tcp
+      destination_ports:
+        - "80"
+        - "443"
+        - "22"
+        - "8081:8083"
+      jump: ACCEPT
+
+  - name: bloquear las demas
+    ansible.builtin.iptables:
+      chain: INPUT
+      policy: DROP
+
+
+

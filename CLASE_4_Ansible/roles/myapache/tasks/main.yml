@@ -1,0 +1,15 @@
+- name: Actualizar lista de paquetes
+  apt:
+    update_cache: yes
+
+- name: Instalar apache
+  apt:
+    name: apache2
+    state: present
+
+- name: Copiar pagina web
+  template:
+    src: mywebpage.html.j2
+    dest: /var/www/html/index.html
+    mode: 0644
+  notify: reiniciar apache

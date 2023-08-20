@@ -1,0 +1,7 @@
+[server]
+#192.168.122.125 ansible_user=server ansible_password=1234 ansible_sudo_pass={{pass1}}
+localhost ansible_connection=local #FOR USE IN WORKFLOWS
+
+[host]
+#localhost ansible_connection=local ansible_sudo_pass={{pass2}}
+

@@ -1,0 +1,14 @@
+---
+- name: play1
+  hosts: server
+  become: yes
+  roles:
+    - myapache # also available mynginx
+    - postfix  # also available geerlinguy.postfix (official role)
+    
+- name: docker local installation for nginx
+  hosts: server # originaly it used host but changed to work in a workflow  
+  become: yes
+  roles:
+    - dockerlab
+  

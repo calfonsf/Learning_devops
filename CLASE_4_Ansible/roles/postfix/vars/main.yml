@@ -1,0 +1,4 @@
+postfix_conf_file: main.cf
+hostname: server
+correo_local: mail.server.com
+correo_de_reenvio: shinravii@gmail.com

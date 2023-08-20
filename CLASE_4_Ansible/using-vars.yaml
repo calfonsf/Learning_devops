@@ -1,0 +1,14 @@
+---
+- name: playbook general
+  hosts: server
+  become: yes
+  vars:
+  - myname: Carlos
+  - job: student
+  - place: "CUJAE Univeristy"
+  tasks:
+  - name: Debugeando
+    ansible.builtin.debug:
+      msg: I am {{ myname }} a {{ job }} from {{ place }} 
+       
+  

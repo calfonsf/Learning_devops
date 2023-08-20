@@ -1,0 +1,4 @@
+nginx_conf_file: nginx.conf
+my_text: Hola Carlos esto es un servidor web con Nginx
+my_title: nginx_test
+pagefile: index.nginx-debian.html
