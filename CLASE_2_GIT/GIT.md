@@ -43,7 +43,7 @@ retira archivos que seran salvados en el proximo comit
 
 # Git commit
 
-permite salvar los archivos a git
+Permite salvar los archivos a git
 
 Vscode pide: git config --global user.email "calfonsf@gmail.com", si no te gusta usa ssh
 
@@ -57,7 +57,7 @@ Reporta el estado actual
 
 # Git push
 
-Necesita subir al repo los commits
+Permite subir al repo los commits
 
 >git push
 
